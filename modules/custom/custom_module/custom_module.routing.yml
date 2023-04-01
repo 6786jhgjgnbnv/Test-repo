@@ -1,0 +1,15 @@
+custom_module.likefunction:
+  path: '/like-create/{id}'
+  defaults:
+    _controller: 'Drupal\custom_module\Controller\LikeCreateController::likecreate'
+    _title: 'Like Count For This Article'
+  requirements:
+    _permission: 'access content'
+
+custom_module.swapexample:
+  path: '/swap'
+  defaults:
+    _controller: 'Drupal\custom_module\Controller\LikeCreateController::swapexample'
+    _title: 'Afret swap'
+  requirements:
+    _permission: 'access content'

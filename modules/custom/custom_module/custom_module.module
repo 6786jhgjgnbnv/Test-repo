@@ -1,0 +1,31 @@
+<?php
+/**
+ * Implements hook_form_alter().
+ */
+// function constellator_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+//   // Adding custom validation for the welcome page type field.
+//   if ($form_id == 'node_article_edit_form' || $form_id == 'node_article_form') {
+//     // Do some stuff.
+//   }
+// }
+
+
+
+function custom_module_preprocess_page(&$variables) {
+ $variables['#attached']['library'][] = 'custom_module/custom_module';
+}
+// answer for 7 question a --
+function query(){
+//mysql query --
+$database = \Drupal::database();
+$query = $database->select('salesman', 'sl');
+$query->fields('sl'['name','city']);
+$query->fields('cs'['name','city']);
+$query->join('customer','cs','cs.city=sl.city')
+$result = $query->execute()->fetchAll();
+}
+
+
+
+?>
